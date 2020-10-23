@@ -59,14 +59,16 @@
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
+
                 <EditText
+                    android:id="@+id/edit_text_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name"
 
-                    android:theme="@style/CustomEditTextStyle"
+                    android:hint="Name"
                     android:textColor="@android:color/black"
-                    android:textColorHint="@android:color/tertiary_text_dark"/>
+                    android:textColorHint="@android:color/tertiary_text_dark"
+                    android:theme="@style/CustomEditTextStyle" />
             </com.google.android.material.textfield.TextInputLayout>
             
             <Button
