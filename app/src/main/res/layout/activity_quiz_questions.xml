@@ -50,8 +50,86 @@
                 android:progress="0"
                 android:indeterminate="false"
                 />
+            <TextView
+                android:id="@+id/textview_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:gravity="center"
+                android:textColorHint="@android:color/black"
+                android:textSize="14sp"
+                android:text="0/10"/>
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/textview_option_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_border"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            tools:text="Bird"/>
+
+        <TextView
+            android:id="@+id/textview_option_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/default_border"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            tools:text="Cat"/>
+
+        <TextView
+            android:id="@+id/textview_option_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/default_border"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            tools:text="Dog" />
+
+        <TextView
+            android:id="@+id/textview_option_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/default_border"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            tools:text="Cow"/>
+
+        <Button
+            android:id="@+id/button_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@android:color/black"
+            android:text="SUBMIT"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            />
     </LinearLayout>
+
+
 </ScrollView>
