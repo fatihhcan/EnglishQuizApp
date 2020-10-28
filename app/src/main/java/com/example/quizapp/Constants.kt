@@ -24,7 +24,7 @@ object Constants{
             "Turtle",
             "Bull",
             "Wolf",
-            2
+            3
         )
         questionList.add(que2)
 
@@ -36,7 +36,7 @@ object Constants{
             "Cat",
             "Goose",
             "Zebra",
-            3
+            2
         )
         questionList.add(que3)
 
@@ -60,7 +60,7 @@ object Constants{
             "Dog",
             "Tiger",
             "Rabbit",
-            5
+            2
         )
         questionList.add(que5)
 
@@ -72,7 +72,7 @@ object Constants{
             "Wolf",
             "Lion",
             "Camel",
-            6
+            1
         )
         questionList.add(que6)
 
@@ -84,7 +84,7 @@ object Constants{
             "Dog",
             "Elephant",
             "Fish",
-            7
+            3
         )
         questionList.add(que7)
 
@@ -96,7 +96,7 @@ object Constants{
             "Fish",
             "Giraffe",
             "Horse",
-            8
+            2
         )
         questionList.add(que8)
 
@@ -109,7 +109,7 @@ object Constants{
             "Elephant",
             "Bird",
             "Wolf",
-            9
+            1
         )
         questionList.add(que9)
 
@@ -121,7 +121,7 @@ object Constants{
             "Cow",
             "Goose",
             "Cat",
-            9
+            3
         )
         questionList.add(que10)
         return questionList
