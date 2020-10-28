@@ -1,23 +1,45 @@
 package com.example.quizapp
 
+import android.graphics.Color
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_quiz_questions.*
 
-class QuizQuestionsActivity : AppCompatActivity() {
+class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
+
+    private var mCurrentPosition:Int = 1
+    private var mQuestionList: ArrayList<Question>? = null
+    private var mSelectedOptionPosition: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_questions)
 
-        val questionList = Constants.getQuestions()
-        Log.i("Questions Size", "${questionList.size}")
+        mQuestionList = Constants.getQuestions()
 
-        val currentPosition = 1
-        val question: Question? = questionList[currentPosition -1]
+        setQuestion()
 
-        progressBar.progress = currentPosition
-        textview_progress.text = "$currentPosition" + "/" + progressBar.max
+        textview_option_one.setOnClickListener(this)
+        textview_option_two.setOnClickListener(this)
+        textview_option_three.setOnClickListener(this)
+        textview_option_four.setOnClickListener(this)
+
+    }
+
+    private fun setQuestion(){
+
+        mCurrentPosition = 1
+        val question = mQuestionList!![mCurrentPosition-1]
+
+        defaultOptionsView()
+
+        progressBar.progress = mCurrentPosition
+        textview_progress.text = "$mCurrentPosition" + "/" + progressBar.max
 
         textview_question.text = question!!.question
         imageview_image.setImageResource(question.image)
@@ -27,4 +49,52 @@ class QuizQuestionsActivity : AppCompatActivity() {
         textview_option_three.text = question.optionThree
         textview_option_four.text = question.optionFour
     }
+
+    private fun defaultOptionsView(){
+        val options = ArrayList<TextView>()
+        options.add(0, textview_option_one)
+        options.add(1, textview_option_two)
+        options.add(2,textview_option_three)
+        options.add(3,textview_option_four)
+
+        for (option in options){
+            option.setTextColor(Color.parseColor("#000000"))
+            option.typeface = Typeface.DEFAULT
+            option.background = ContextCompat.getDrawable(
+                this,
+                R.drawable.default_border
+            )
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when(v?.id){
+            R.id.textview_option_one ->{
+                selectedOptionView(textview_option_one,1)
+            }
+            R.id.textview_option_two ->{
+                selectedOptionView(textview_option_two,2)
+            }
+            R.id.textview_option_three ->{
+                selectedOptionView(textview_option_three,3)
+            }
+            R.id.textview_option_four ->{
+                selectedOptionView(textview_option_four,4)
+            }
+        }
+    }
+
+    private fun selectedOptionView(tv: TextView, selectedOptionNum: Int){
+        defaultOptionsView()
+        mSelectedOptionPosition = selectedOptionNum
+
+        tv.setTextColor(Color.parseColor("#4040ff"))
+        tv.setTypeface(tv.typeface, Typeface.BOLD)
+        tv.background = ContextCompat.getDrawable(
+            this,
+            R.drawable.selected_default_border
+        )
+
+    }
+
 }
